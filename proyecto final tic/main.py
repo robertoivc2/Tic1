@@ -19,6 +19,7 @@ window = MainWindow()
 
 # Variables
 serialInstancia = serial.Serial()
+prueba = 0
 
 # Loop
 def loop():
@@ -75,12 +76,13 @@ def serialDesconectar():
 window.serialDesconectar.clicked.connect(serialDesconectar)
 
 # Enviar configuración de alerta a Arduino
-def alertaActualizar(prueba=0):
+def alertaActualizar():
     if serialInstancia.is_open:
         sonido = int(window.alertaSonido.isChecked())
         led = int(window.alertaLED.isChecked())
         umbral = window.verticalSlider.value()
         msg = str(prueba) + str(sonido) + str(led) + str(umbral)
+        print(msg)
         serialInstancia.write(msg.encode("utf-8"))
         printConsola("Actualizando configuración")
         printConsola("SND: " + str(sonido) + " LED: " + str(led) + " UMB: " + str(umbral))
@@ -89,7 +91,10 @@ window.alertaLED.clicked.connect(alertaActualizar)
 window.verticalSlider.valueChanged.connect(alertaActualizar)
 
 def alertaPrueba():
-    alertaActualizar(prueba=1)
+    global prueba
+    prueba = 1
+    alertaActualizar()
+    prueba = 0
 window.alertaPrueba.clicked.connect(alertaPrueba)
 
 # Activar/desactivar elementos de la interfaz
