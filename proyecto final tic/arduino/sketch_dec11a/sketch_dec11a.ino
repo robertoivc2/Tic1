@@ -1,7 +1,7 @@
 int prueba = 0;
 int sonido = 0;
 int led = 0;
-int umbral = 300;
+int umbral = 90;
 int timerPrueba = -1;
 
 int redLed = 11;
@@ -49,7 +49,7 @@ void loop() {
     char data[10];
     int bytes = Serial.readBytesUntil('\n', data, 10);
     // PRUEBA
-    if (data[0] == '1') {prueba = 1; timerPrueba = 30;} else {prueba = 0; timerPrueba = -1;}
+    if (data[0] == '1') {prueba = 1; timerPrueba = 300;} else {prueba = 0; timerPrueba = -1;}
     // SONIDO
     if (data[1] == '1') {sonido = 1;} else {sonido = 0;}
     // LED
@@ -64,5 +64,5 @@ void loop() {
       umbral += 1;
     }
   }
-  delay(100);
+  delay(10);
 }

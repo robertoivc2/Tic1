@@ -10,7 +10,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
-        self.timer.start(10, self)
+        self.timer.start(5, self)
     def timerEvent(self, event):
         loop()
     
