@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>350</height>
+    <width>507</width>
+    <height>285</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>0</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>40</y>
+      <y>20</y>
       <width>111</width>
       <height>21</height>
      </rect>
@@ -41,7 +41,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
+      <y>20</y>
       <width>49</width>
       <height>16</height>
      </rect>
@@ -54,7 +54,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
+      <y>80</y>
       <width>71</width>
       <height>24</height>
      </rect>
@@ -64,10 +64,13 @@
     </property>
    </widget>
    <widget class="QPushButton" name="serialDesconectar">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>70</y>
+      <y>80</y>
       <width>71</width>
       <height>24</height>
      </rect>
@@ -90,6 +93,9 @@
     </property>
    </widget>
    <widget class="QCheckBox" name="alertaSonido">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -103,6 +109,9 @@
     </property>
    </widget>
    <widget class="QCheckBox" name="alertaLED">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -116,6 +125,9 @@
     </property>
    </widget>
    <widget class="QSlider" name="verticalSlider">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -123,6 +135,18 @@
       <width>22</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="maximum">
+     <number>500</number>
+    </property>
+    <property name="singleStep">
+     <number>50</number>
+    </property>
+    <property name="value">
+     <number>100</number>
+    </property>
+    <property name="tracking">
+     <bool>false</bool>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
@@ -141,13 +165,110 @@
      <string>Umbral</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="alertaPrueba">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Prueba</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ESTADO</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sensorLectura">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>40</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lectura: 100</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>0</y>
+      <width>20</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="serialActualizar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>151</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Actualizar lista</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>60</y>
+      <width>291</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>460</width>
+     <width>507</width>
      <height>22</height>
     </rect>
    </property>
